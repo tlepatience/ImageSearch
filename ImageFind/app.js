@@ -1,4 +1,4 @@
- const accesskey = "RZEIOVfPhS7vMLkFdd2TSKGFBS4o9_FmcV1Nje3FSjw";
+ const accesskey = "RZEIOVfPhS7vMLkFdd2TSKGFBS4o9_FmcV1Nje3FSjw"
 //const accesskey = '2369ec6ce3mshe7f3781f9603a86p1fb2a0jsnece983fded05';
  const formel = document.querySelector("form");
  const search_val = document.getElementById("search-bar");
@@ -11,10 +11,11 @@ let page = 1;
 
 async function unsplash_images(){
     inputData = search_val.value ;
-    const url = `https://api.unsplash.com/search/photos?page=${page}&query=${search_val}&client_id=${accesskey }`;
+    const url = `https://api.unsplash.com/search/photos?page=${page}&query=${inputData}&client_id=${accesskey }`;
     
     const response = await fetch(url);
     const data = await response.json();
+    console.log(data);
     
     if(page == 1)
     {
